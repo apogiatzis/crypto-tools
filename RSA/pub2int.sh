@@ -8,7 +8,7 @@ echo $modulus
 echo -e "\n"
 
 echo "[+] Exponent"
-exponent=$(awk '/Exponent:/,0' < pub2int.dat | tail -n +2 | tr -d ":    \n")
+exponent=$(awk '/Exponent:/,0' < pub2int.dat | awk '{gsub("Exponent", "");print}' | tr -d ":    \n")
 echo $exponent
 echo -e "\n"
 
